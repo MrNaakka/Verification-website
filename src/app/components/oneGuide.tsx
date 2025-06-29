@@ -9,7 +9,7 @@ import React from "react";
 import { Guide } from "../content/installion-steps";
 
 export default function OneGuide({ guide }: { guide: Guide }) {
-	var index = 0;
+	let index = 0;
 
 	return (
 		<section className="w-full border-1 border-black rounded p-1">
