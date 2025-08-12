@@ -7,10 +7,10 @@ import { type NextRequest } from "next/server";
 export async function GET(req: NextRequest) {
 	const filepath = path.join(
 		process.cwd(),
-		"./files/Verification_Background-1.0.dmg"
+		"./files/Verification_background-1.0.dmg"
 	);
 
-	const filename = "Verification_Background-1.0.dmg";
+	const filename = "Verification_background-1.0.dmg";
 	const version = "1.0.0";
 	const ip =
 		req.headers.get("x-forwarded-for")?.split(",")[0].trim() ?? "unknown";
