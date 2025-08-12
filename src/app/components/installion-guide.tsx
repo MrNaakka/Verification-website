@@ -4,7 +4,9 @@ import {
 	downloadProgram,
 	fullDiskAccess,
 	phoneNumberToMicrosoft,
-	shortcut,
+	firstRunOpen,
+	addToLoginItems,
+	verifyRunning,
 } from "../content/installion-steps";
 
 export default function InstallionGuide() {
@@ -17,8 +19,10 @@ export default function InstallionGuide() {
 			<OneGuide guide={forwardMessages} />
 			<OneGuide guide={phoneNumberToMicrosoft} />
 			<OneGuide guide={downloadProgram} />
+			<OneGuide guide={firstRunOpen} />
 			<OneGuide guide={fullDiskAccess} />
-			<OneGuide guide={shortcut} />
+			<OneGuide guide={addToLoginItems} />
+			<OneGuide guide={verifyRunning} />
 
 			<p>And if you ever get stuck; ask chat-gpt...</p>
 		</section>

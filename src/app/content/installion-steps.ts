@@ -12,10 +12,10 @@ export const forwardMessages: Guide = {
 };
 
 const microsoftPhone: string[] = [
-	"Sign in to microsoft and navigate to your account",
-	'Go to "Security info"',
-	"Add your phone number as a new sign in method",
-	"Change a text message to be the default method sign in method",
+	"Sign in to microsoft and navigate to your account.",
+	'Go to "Security info".',
+	"Add your phone number as a new sign in method, and enabled it.",
+	"Change a text message to be the default method sign in method.",
 ];
 
 export const phoneNumberToMicrosoft: Guide = {
@@ -24,39 +24,67 @@ export const phoneNumberToMicrosoft: Guide = {
 };
 
 const downloadSteps: string[] = [
-	"Click the DOWNLOAD button",
-	"open the zip",
-	"open then folder and double click on the setup file; this will open all the relevant pages",
+	"Click the DOWNLOAD button and save Verification_Background-1.0.dmg.",
+	"Open Verification_Background-1.0.dmg from your Downloads.",
+	"In the window that opens, drag Verification_Background.app onto the Applications shortcut.",
+	"Optional: Eject the mounted volume named “Verification_Background” from Finder’s sidebar.",
 ];
 
 export const downloadProgram: Guide = {
-	header: "Download the program",
+	header: "Download and install",
 	steps: downloadSteps,
 };
 
+/* 2) First run (allow the app in Privacy & Security) */
+const firstRunSteps: string[] = [
+	"Open Applications in Finder and try to open Verification_Background once. It will not open! Continue with the steps below.",
+	"Open System Settings → Privacy & Security.",
+	"Scroll to the Security section. You should see a message that Verification_Background was blocked.",
+	"Click Open Anyway.",
+	"When asked again, confirm by clicking Open.",
+	"You only need to do this once. Future launches will be normal.",
+];
+
+export const firstRunOpen: Guide = {
+	header: "First run (allow in Privacy & Security)",
+	steps: firstRunSteps,
+};
+
+/* 3) Grant Full Disk Access (required once) */
 const diskCoverageSteps: string[] = [
-	"Go to the settings window that was just opened",
-	"Give Verification full disk access",
-	"Why: the program needs acces to your messages in order to extract the microsoft message from there",
+	"Open System Settings → Privacy & Security → Full Disk Access.",
+	"Click the + button, choose Applications, select Verification_Background.app, then click Open.",
+	"Turn the toggle on for Verification_Background.",
+	"If you later replace the app with a new version, you may need to re-add it here.",
 ];
 
 export const fullDiskAccess: Guide = {
-	header: "Give the programm full disk access",
+	header: "Give the program Full Disk Access",
 	steps: diskCoverageSteps,
 };
 
-const shortCutSteps: string[] = [
-	"To run the program with a keyboard combination you need to create a shortcut",
-	"Go to the just opened shortcut application",
-	"Click the plus sign at the top of the page to create a new shortcut",
-	'Search for "open app" and drag it to the main window',
-	"Click on the app and search for verification",
-	'Click on the "I" at the top right of the page',
-	'Click on the "Use as Quick Action" and then add a keyboard shortcut; I use command + shift + K',
-	"Now you are done!",
+/* 4) Start automatically at login */
+const loginItemsSteps: string[] = [
+	"Open System Settings → General → Login Items.",
+	"Under Open at Login, click the + button.",
+	"Select Verification_Background from Applications and click Open.",
+	"Confirm it appears in the list and is enabled.",
 ];
 
-export const shortcut: Guide = {
-	header: "Create a shortcut",
-	steps: shortCutSteps,
+export const addToLoginItems: Guide = {
+	header: "Make it start automatically at login",
+	steps: loginItemsSteps,
+};
+
+/* 5) Verify it is running */
+const verifySteps: string[] = [
+	"Open Activity Monitor.",
+	"Search for Verification_Background.",
+	"You should see a process like: Verification_Background",
+	"If you do not see it, open Applications and double-click Verification_Background to start it, or reboot your Mac.",
+];
+
+export const verifyRunning: Guide = {
+	header: "Verify that it is running",
+	steps: verifySteps,
 };
